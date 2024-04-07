@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useResponsive = () => {
   const [device, setDevice] = useState({
@@ -14,7 +14,7 @@ export const useResponsive = () => {
     const computer = width >= 990;
     setDevice({ mobile, tablet, computer });
   };
-  useState(() => {
+  useEffect(() => {
     // first calculation
     deviceCheck();
 
